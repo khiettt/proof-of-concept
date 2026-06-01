@@ -1,0 +1,25 @@
+/* Color palette */
+:root {
+  /* Hoofdkleuren */
+  --color-logo: #D9E54C;
+  --color-brand: #A11236;
+  --color-accent: #004C99;
+
+  /* Groentinten */
+  --color-success-light: #9FDB81;
+  --color-success-soft: #DBE192;
+  --color-success: #B4BE3D;
+  --color-success-dark: #7EB960;
+
+  /* Roze/Roodtinten */
+  --color-secondary-light: #FFC9D7;
+  --color-secondary: #D8708A;
+  --color-secondary-dark: #AA6778;
+  --color-secondary-darker: #5D0F22;
+
+  /* Blauwtinten */
+  --color-info-light: #5E89B4;
+  --color-info: #729DDE;
+  --color-info-soft: #4D98E4;
+  --color-info-dark: #0A79B0;
+}
