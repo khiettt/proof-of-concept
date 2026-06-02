@@ -6,20 +6,27 @@
   --color-accent: #004C99;
 
   /* Groentinten */
-  --color-success-light: #9FDB81;
-  --color-success-soft: #DBE192;
   --color-success: #B4BE3D;
   --color-success-dark: #7EB960;
 
   /* Roze/Roodtinten */
-  --color-secondary-light: #FFC9D7;
-  --color-secondary: #D8708A;
-  --color-secondary-dark: #AA6778;
-  --color-secondary-darker: #5D0F22;
+  --color-secondary-light: #D8708A;
+  --color-secondary-dark: #5D0F22;
 
   /* Blauwtinten */
-  --color-info-light: #5E89B4;
   --color-info: #729DDE;
-  --color-info-soft: #4D98E4;
-  --color-info-dark: #0A79B0;
+  --color-info-light: #5E89B4;
+
+  /* Grijzetinten */
+  --white: #ffffff;
+  --grey-95: #f1f2f4;
+  --grey-85: #d5d9dd;
+  --grey-75: #b9bfc6;
+  --grey-65: #9da5af;
+  --grey-55: #818c98;
+  --grey-45: #67737e;
+  --grey-35: #505962;
+  --grey-25: #394046;
+  --grey-15: #22262a;
+  --grey-5: #0b0d0e;
 }
