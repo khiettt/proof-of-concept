@@ -73,4 +73,56 @@ Test!
     </div>
 
   </section>
+
+  {% comment %} Trending topics {% endcomment %}
+  <div class="grid-container">
+    <section class="smallest-colmn">
+      <img class="img-active-topics-small" src="/assets/actieve-topics.svg">
+      <h2 class="smallest-colmn-h2">Trending topics</h2>
+      <p class="smallest-colmn-p">Nvidia Blackwell GPU’s officeel aangekondigd</p>
+    </section>
+
+    {% comment %} Top gebruikers {% endcomment %}
+    <section class="top-user-card">
+      <ul class="top-user-list">
+        <h2>Top gebruikers</h2>
+        <li class="top-user-item">
+          <span class="user-name">DarkLord_X</span>
+          <div class="amount-topics">55 topics</div>
+          <span class="user-comment">230 reacties</span>
+        </li>
+
+        <li class="top-user-item">
+          <span class="user-name">Verwijderd</span>
+          <div class="amount-topics">41 topics</div>
+          <span class="user-comment">198 reacties</span>
+        </li>
+
+        <li class="top-user-item">
+          <span class="user-name">TheZepMan</span>
+          <div class="amount-topics">39 topics</div>
+          <span class="user-comment">160 reacties</span>
+        </li>
+
+        <li class="top-user-item">
+          <span class="user-name">Eppo_</span>
+          <div class="amount-topics">35 topics</div>
+          <span class="user-comment">142 reacties</span>
+        </li>
+
+        <li class="top-user-item">
+          <span class="user-name">Jeroen207</span>
+          <div class="amount-topics">28 topics</div>
+          <span class="user-comment">118 reacties</span>
+        </li>
+      </ul>
+    </section>
+
+    {% comment %} Meest gebruikte categorie {% endcomment %}
+    <section class="most-used-category">
+      <img class="img-most-used-cat" src="/assets/Files-Tweaker.svg">
+      <p>35% van alle topics</p>
+      <h2 class="h2-most-used-cat">Hardware</h2>
+      <p>Meest gebruikte categorie</p>
+    </section>
 {% include 'partials/foot.liquid' %}
