@@ -1,6 +1,9 @@
 // Importeer het npm package Espress
 import express from "express";
 
+// import het npm package feed
+import { parseFeed } from 'feedsmith'
+
 // Importeer de Liquid package
 import { Liquid } from "liquidjs";
 
@@ -22,12 +25,46 @@ app.engine("liquid", engine.express());
 // Deze bestanden kunnen niet rechtstreeks laden
 app.set("views", "./views");
 
+// url totaaltopics
+const totalTopics = "https://gathering.tweakers.net/"
+
+// url 
+const activeTopics = "https://gathering.tweakers.net/rss/list_activetopics"
+
 app.get("/", async function (request, response) {
-    // hier moet ik de url nog fethen en en parameters meegeven
-    // niet vergeten geen JSON gebruiken maar XML 
-    const tweakersXML = await tweakersXml.xml();
-    response.render("index.liquid");
-});
+
+})
+
+// app.get("/", async function (request, response) {
+
+//     // url fetch 
+//     const tweakersResponse = await fetch('https://gathering.tweakers.net/rss')
+//     const tweakersResponseXml = await tweakersResponse.text()
+
+//     const { format, feed } = parseFeed(tweakersResponseXml)
+
+//     const items = []
+//   for (const item of feed.items) {
+//     items.push({
+//       title: 4,
+//       link: item.link,
+//       replies: Number(item.description.substring(9, item.description.indexOf('\n')))
+//     })
+//   }
+    
+//     console.log(feed)
+
+//     // niet vergeten geen JSON gebruiken maar XML 
+//     response.render("index.liquid", {items: feed.items});
+// });
+
+app.get("/categorie/:id", async function (request, response) {
+    const rssResponse = await fetch('https://gathering.tweakers.net/rss/list_topics/${request.params.id}')
+    const ResponseXml = await rssResponse.text()
+    
+    const { format, feed } = parseFeed(responseXML)
+    response.render("categorie.liquid", {items: feed.items})
+})
 
 app.set("port", process.env.PORT || 8001);
 
