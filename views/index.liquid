@@ -85,35 +85,13 @@
     <section class="top-user-card">
       <ul class="top-user-list">
         <h2>Top gebruikers</h2>
-        <li class="top-user-item">
-          <span class="user-name">DarkLord_X</span>
-          <div class="amount-topics">55 topics</div>
-          <span class="user-comment">230 reacties</span>
-        </li>
-
-        <li class="top-user-item">
-          <span class="user-name">Verwijderd</span>
-          <div class="amount-topics">41 topics</div>
-          <span class="user-comment">198 reacties</span>
-        </li>
-
-        <li class="top-user-item">
-          <span class="user-name">TheZepMan</span>
-          <div class="amount-topics">39 topics</div>
-          <span class="user-comment">160 reacties</span>
-        </li>
-
-        <li class="top-user-item">
-          <span class="user-name">Eppo_</span>
-          <div class="amount-topics">35 topics</div>
-          <span class="user-comment">142 reacties</span>
-        </li>
-
-        <li class="top-user-item">
-          <span class="user-name">Jeroen207</span>
-          <div class="amount-topics">28 topics</div>
-          <span class="user-comment">118 reacties</span>
-        </li>
+        {% for user in users %}
+          <li class="top-user-item">
+            <span class="user-name">{{user.username}}</span>
+            <div class="amount-topics">TBA</div>
+            <span class="user-comment">{{ user.number_of_posts}} Reacties</span>
+          </li>
+        {% endfor %}
       </ul>
     </section>
 
