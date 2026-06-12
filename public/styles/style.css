@@ -1,3 +1,18 @@
+ * {
+     margin: 0px;
+     box-sizing: border-box;
+     font-family: IBM Plex Sans;
+ }
+
+ body {
+     background-color: #F3F3F3;
+ }
+
+ @font-face {
+     font-family: IBM Plex Sans;
+     src: url('/font/IBM_Plex_Sans,Parkinsans.zip') format('truetype');
+ }
+
  /* header */
  header {
      /* display: flex;
@@ -6,5 +21,86 @@
      h1 {
          font-family: IBM Plex Sans;
      }
+ }
+
+ /* main */
+ main {
+     display: grid;
+     /* 
+        veel handiger om frs te gebruiken voor responsiveness!
+     grid-template-columns: repeat(2, 350px); */
+     grid-template-columns: 1fr 1fr;
+     /*  Deze hebben we eigenlijk niet nodig, grid maakt zelf rows aan.
+    grid-template-rows: repeat(2, 1fr); */
+     justify-content: center;
+     gap: 10px;
+ }
+
+ /* Small card */
+ .small-cards {
+     display: grid;
+     align-items: center;
+     /* we gebruiken auto, zodat de eerste kolom de breedte krijgt van z'n content */
+     grid-template-columns: auto 1fr;
+     grid-template-rows: repeat(3, auto);
+     /* auto auto auto; */
+     column-gap: 0.5rem;
+
+     background-color: var(--white);
+
+     border-radius: var(--border-radius);
+     padding: 10px;
+
+     /* we hebben geen height nodig, we gebruiken de content om de hoogte te bepalen
+    height: 130px; 
+    Als je dan height wil geven, gebruik dan min height zodat als de content groter moet worden dat het kan.
+    */
+
+
+
+     h2 {
+         font-family: IBM Plex Sans;
+         font-weight: 600;
+         text-align: center;
+     }
+
+     .small-card-img {
+         /* width: 3.125rem; */
+         height: 100%;
+         aspect-ratio: 1;
+         grid-row: 1 / -1;
+         /* dit betekent dat het alle mogelijke rijen gaat vullen met dit element */
+         padding: 15px;
+         border-radius: 10px;
+
+     }
+ }
+
+ p {
+     font-family: IBM Plex Sans;
+     font-weight: 300;
+     text-align: center;
+
+     span {
+         color: var(--grey-75);
+     }
+ }
+
+
+
+ .img-total-topics {
+     background-color: var(--color-secondary-light);
+ }
+
+ .img-active-topics {
+     background-color: var(--color-success);
+ }
+
+ .img-most-active-user {
+     background-color: var(--color-secondary-orange);
+ }
+
+ .img-account-circle {
+     background-color: var(--color-info-light);
  }
 
