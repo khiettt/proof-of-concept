@@ -41,4 +41,36 @@ Test!
     <p>6.7%<span> vs gisteren</span></p>
   </section>
 
+  {% comment %} grafiek "top actieve gebruikers" {% endcomment %}
+  <section class="top-topics-card">
+    <h2>Top actieve topics</h2>
+
+    <div class="topic-list">
+    {% comment %} topic: AM5: Ervaring en Discussie {% endcomment %}
+        <label for="topic-245">AM5: Ervaring en Discussie</label>
+        <meter id="topic-245"  min="0" max="300" value="245">245</meter>
+        <p>245</p>
+
+        {% comment %} topic: RTX 50-serie: Nieuws & Discussie {% endcomment %}
+        <label for="topic-198">RTX 50-serie: Nieuws & Discussie</label>
+        <meter id="topic-198"  min="0" max="300" value="198">198</meter>
+        <p>198</p>
+
+        {% comment %} topic: Windows 11: Ervaringen {% endcomment %}
+        <label for="topic-156">Windows 11: Ervaringen</label>
+        <meter id="topic-156"  min="0" max="300" value="156">156</meter>
+        <p>156</p>
+
+        {% comment %} topic: Koffietopic - Deel 8 {% endcomment %}
+        <label for="topic-142">Koffietopic - Deel 8</label>
+        <meter id="topic-142"  min="0" max="300" value="142">142</meter>
+        <p>142</p>
+
+        {% comment %} topic: Games in ontwikkeling {% endcomment %}
+        <label for="topic-121">Games in ontwikkeling </label>
+        <meter id="topic-121"  min="0" max="300" value="121">121</meter>
+        <p>121</p>
+    </div>
+
+  </section>
 {% include 'partials/foot.liquid' %}
