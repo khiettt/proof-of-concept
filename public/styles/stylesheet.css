@@ -11,11 +11,13 @@
 
   /* Roze/Roodtinten */
   --color-secondary-light: #D8708A;
-  --color-secondary-dark: #5D0F22;
+  --color-secondary-orange: #FE681E;
 
   /* Blauwtinten */
   --color-info: #729DDE;
-  --color-info-light: #5E89B4;
+  --color-info-light: #89AFE9;
+
+  --border-radius: 1rem;
 
   /* Grijzetinten */
   --white: #ffffff;
