@@ -1,5 +1,44 @@
 {% include 'partials/head.liquid' %}
+{% comment %} dynamische data kan ik later gebruiken {% endcomment %}
+{% comment %}
+  {% for item in items %}
+      {% assign ID = item.link | split: "/" %}
+  <article>
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+      <a href="/categorie/{{ID[5]}}">{{ item.title }}</a>
+  </article>
+  {%  endfor %}
+{% endcomment %}
+<main>
+  {% comment %} de eerste 4 kaartjes {% endcomment %}
+  <section class="small-cards">
+    <img class="small-card-img img-total-topics" src="/assets/totaal-topics.svg">
+    <h2>1450</h2>
+    <p>Totaal topics</p>
+    <p>12.5%<span> vs gisteren</span></p>
+  </section>
 
 Test!
+  <section class="small-cards">
+    <img class="small-card-img img-active-topics" src="/assets/actieve-topics.svg">
+    <h2>125</h2>
+    <p>Actieve topics</p>
+    <p>8.3%<span> vs gisteren</span></p>
+  </section>
+
+  <section class="small-cards">
+    <img class="small-card-img img-most-active-user" src="/assets/meest-actieve-gebruikers.svg">
+    <h2>450</h2>
+    <p>Meest actieve gebruikers</p>
+    <p>15.2%<span> vs gisteren</span></p>
+  </section>
+
+  <section class="small-cards">
+    <img class="small-card-img img-account-circle" src="/assets/account_circle.svg">
+    <h2>890</h2>
+    <p>Reacties van afgelopen week</p>
+    <p>6.7%<span> vs gisteren</span></p>
+  </section>
 
 {% include 'partials/foot.liquid' %}

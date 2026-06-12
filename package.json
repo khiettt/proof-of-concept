@@ -27,6 +27,7 @@
   "homepage": "https://github.com/fdnd-task/proof-of-concept#readme",
   "dependencies": {
     "express": "^5.0.1",
+    "feedsmith": "^2.9.4",
     "liquidjs": "^10.21.0"
   }
 }
