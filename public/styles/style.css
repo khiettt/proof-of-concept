@@ -240,3 +240,33 @@
      }
  }
 
+ /* laatste kaartje */
+
+ .last-topic-card {
+     grid-column: span 2;
+     background-color: var(--white);
+     border-radius: var(--border-radius);
+     padding: 15px;
+ }
+
+ .last-topic-list {
+     margin: 0;
+     padding: 0;
+ }
+
+ .last-topic-item {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     align-items: center;
+     gap: 2rem;
+     margin-bottom: 2rem;
+
+     .last-topic-user,
+     .last-topic-time {
+         color: var(--grey-75);
+     }
+ }
+
+ .h2-last-topic {
+     margin-bottom: 1rem;
+ }
