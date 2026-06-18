@@ -134,11 +134,16 @@
  }
 
  .topic-list {
-     display: grid;
-     grid-template-columns: 20rem 1fr max-content;
-     column-gap: 5rem;
-     row-gap: 1.5rem;
- }
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 668px) {
+        display: grid;
+        grid-template-columns: 20rem 1fr max-content;
+        column-gap: 5rem;
+        row-gap: 1.5rem;
+    }
+}
 
  meter {
      margin-bottom: 1rem;
@@ -155,7 +160,15 @@
  meter::-webkit-meter-optimum-value {
     padding: 10px;
     background-color: var(--color-brand);
+    animation-name: meter;
+    animation-duration: 1s;
  }
+@keyframes meter{
+    from{
+        inline-size: 0%;
+    }
+}
+
 .grid-container {
     grid-column: 1 /-1;
 
