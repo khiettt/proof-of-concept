@@ -85,6 +85,7 @@ app.get("/", async function (request, response) {
   }
 
   // url fetch 
+  const tweakersResponse = await fetch(directusURL + new URLSearchParams(params))
   const tweakersResponseJSON = await tweakersResponse.json()
 
     const newData = []
@@ -149,7 +150,44 @@ app.get("/", async function (request, response) {
   });
 });
 
+app.get('/active-users', async function (request, response) {
+  const paramsOldUsers = {
+    sort: "-member_since",
+    'limit': '5'
+  }
+  const newUserResponse = await fetch(directusURL + new URLSearchParams(paramsOldUsers))
+  const newUserResponseJson = await newUserResponse.json()
 
+    const paramsNewUsers = {
+    sort: "member_since",
+    'limit': '5'
+  }
+  const oldUserResponse = await fetch(directusURL + new URLSearchParams(paramsNewUsers))
+  const oldUserResponseJson = await oldUserResponse.json()
+
+  const paramsUser = {
+  'field': 'id,member_since,username,number_of_posts,forum_id',
+  'sort': '-number_of_posts',
+  'limit': '5'
+  }
+
+  // url fetch 
+  const paramsUserResponse = await fetch(directusURL + new URLSearchParams(paramsUser))
+  const paramsUserResponseJSON = await paramsUserResponse.json()
+
+    const newData = []
+
+    paramsUserResponseJSON.data.forEach(function (user) {
+    user.number_of_posts = Intl.NumberFormat("nl-NL").format(user.number_of_posts)
+    newData.push(user)
+  })
+
+  response.render('active-user.liquid', {
+    newUsers: newUserResponseJson.data,
+    oldUsers: oldUserResponseJson.data,
+    users: paramsUserResponseJSON.data
+  })
+})
 
 app.set("port", process.env.PORT || 8001);
 
