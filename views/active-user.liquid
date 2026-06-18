@@ -1,0 +1,53 @@
+{% include 'partials/head.liquid' %}
+<main class="users-page">
+    <section class="section-users">
+        {% comment %} {{ users | json}} {% endcomment %}
+        <h2>Oudste gebruikers</h2>
+        <ul>
+        {% for user in oldUsers %}
+                <li>
+                    <span>{{ user.username }}</span>
+                    <p>{{ user.member_since }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="section-users">
+        {% comment %} {{ users | json}} {% endcomment %}
+        <h2>Nieuwste gebruikers</h2>
+        <ul>
+        {% for user in newUsers %}
+                <li>
+                    <span>{{ user.username }}</span>
+                    <p>{{ user.member_since }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="user-card">
+      <ul class="top-user-list">
+        <h2>Top gebruikers</h2>
+        {% for user in users %}
+          <li class="top-user-item">
+            <span class="user-name">{{ user.username }}</span>
+            <div class="amount-topics">TBA</div>
+            <span class="user-comment">{{ user.number_of_posts }} Reacties</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <div class="form-submit">
+        <form id="formcomment" action="/active-users" method="POST">
+            <label for="name">Schrijf een comment</label>
+            <input type="text" name="comment" id="comment">
+
+            <label for="email"></label>
+            <input type="email" placeholder="Enter je email" name="email" id="email" required>
+
+             <input type="submit" value="Verstuur">
+        </div>
+</main>
+{% include 'partials/foot.liquid' %}
