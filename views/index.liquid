@@ -25,12 +25,13 @@
     <p>Actieve topics</p>
     <p>8.3%<span> vs gisteren</span></p>
   </section>
-
+  
   <section class="small-cards">
     <img class="small-card-img img-most-active-user" src="/assets/meest-actieve-gebruikers.svg">
     <h2>450</h2>
     <p>Meest actieve gebruikers</p>
     <p>15.2%<span> vs gisteren</span></p>
+    <a href="/active-users"><img src="assets/Drop Down Menu Indicator.svg"></a>
   </section>
 
   <section class="small-cards">
@@ -45,32 +46,13 @@
     <h2>Top actieve topics</h2>
 
     <div class="topic-list">
-    {% comment %} topic: AM5: Ervaring en Discussie {% endcomment %}
-        <label for="topic-245">AM5: Ervaring en Discussie</label>
-        <meter id="topic-245"  min="0" max="300" value="245">245</meter>
-        <p>245</p>
-
-        {% comment %} topic: RTX 50-serie: Nieuws & Discussie {% endcomment %}
-        <label for="topic-198">RTX 50-serie: Nieuws & Discussie</label>
-        <meter id="topic-198"  min="0" max="300" value="198">198</meter>
-        <p>198</p>
-
-        {% comment %} topic: Windows 11: Ervaringen {% endcomment %}
-        <label for="topic-156">Windows 11: Ervaringen</label>
-        <meter id="topic-156"  min="0" max="300" value="156">156</meter>
-        <p>156</p>
-
-        {% comment %} topic: Koffietopic - Deel 8 {% endcomment %}
-        <label for="topic-142">Koffietopic - Deel 8</label>
-        <meter id="topic-142"  min="0" max="300" value="142">142</meter>
-        <p>142</p>
-
-        {% comment %} topic: Games in ontwikkeling {% endcomment %}
-        <label for="topic-121">Games in ontwikkeling </label>
-        <meter id="topic-121"  min="0" max="300" value="121">121</meter>
-        <p>121</p>
+      {% comment %} topic: AM5: Ervaring en Discussie {% endcomment %}
+         {% for item in items %}
+        <label for="topic-245">{{ item.title }}</label>
+        <meter id="topic-245" min="0" max="30000" value="{{ item.replies }}">{{ item.replies }}</meter>
+        <p>{{ item.replies }}</p>
+        {% endfor %}
     </div>
-
   </section>
 
   {% comment %} Trending topics {% endcomment %}
@@ -87,9 +69,9 @@
         <h2>Top gebruikers</h2>
         {% for user in users %}
           <li class="top-user-item">
-            <span class="user-name">{{user.username}}</span>
+            <span class="user-name">{{ user.username }}</span>
             <div class="amount-topics">TBA</div>
-            <span class="user-comment">{{ user.number_of_posts}} Reacties</span>
+            <span class="user-comment">{{ user.number_of_posts }} Reacties</span>
           </li>
         {% endfor %}
       </ul>
