@@ -16,8 +16,6 @@
 
  /* header */
  header {
-     /* display: flex;
-    justify-content: space-between; */
     display: flex;
     justify-content: space-between;
     margin: 1rem;
@@ -178,19 +176,6 @@
     gap: inherit;
 }
 
- /* Laatste paar kollomen */
- .smallest-colmn {
-     /* width: 350px;
-     height: 100px; */
-     display: grid;
-     grid-template-columns: 50px 1fr;
-     grid-template-rows: 30px 1fr;
-     align-items: center;
-     background-color: var(--white);
-     column-gap: 1rem;
-     row-gap: 0.5rem;
-     padding: 10px;
-     border-radius: var(--border-radius);
 /* Laatste paar kollomen */
 .smallest-colmn {
     /* width: 350px;
@@ -292,25 +277,36 @@
      border-radius: var(--border-radius);
      padding: 15px;
  }
+.last-topic-card {
+    grid-column: span 2;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 15px;
+}
 
- .last-topic-list {
-     margin: 0;
-     padding: 0;
- }
+.last-topic-list {
+    margin: 0;
+    padding: 0;
+}
 
- .last-topic-item {
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     align-items: center;
-     gap: 2rem;
-     margin-bottom: 2rem;
+.last-topic-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
 
-     .last-topic-user,
-     .last-topic-time {
-         color: var(--grey-75);
-     }
- }
+    .last-topic-user,
+    .last-topic-time {
+        color: var(--grey-75);
+    }
+}
 
- .h2-last-topic {
-     margin-bottom: 1rem;
- }
+.h2-last-topic {
+    margin-bottom: 1rem;
+}
+
+@view-transition{
+    navigation: auto;
+}
+
