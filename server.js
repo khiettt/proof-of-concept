@@ -71,41 +71,6 @@ scrapeAndUpdateTweakers()
 // Deze bestanden kunnen niet rechtstreeks laden
 app.set("views", "./views");
 
-// // base url
-// const baseURL = "https://gathering.tweakers.net/"
-// // directus url
-// const directusURL = 'https://fdnd-agency.directus.app/items/tweakers_'
-
-// app.get('/tweakers/:categorie', async function (request, response) {
-
-//   const tweakersResponse = await fetch('$baseURL/list_topics/' + request.params.categorie)
-//   const tweakersResponseXML = await tweakersResponse.text()
-
-//   const { format, feed } = parseFeed(tweakersResponseXML)
-//   console.log(feed) // Om te debuggen
-
-//   const items = []
-//   for (const item of feed.items) {
-//     items.push({
-//       title: item.title,
-//       link: item.link,
-//       replies: Number(item.description.substring(9, item.description.indexOf('\n')))
-//     })
-//   }
-
-//   items.sort(function(a, b) {
-//    if (a.replies < b.replies) {
-//     return 1;
-//    } else if (a.replies > b.replies) {
-//     return -1;
-//    }
-//    return 0;
-//   })
-
-//   // console.log(items)
-
-//   response.render('index.liquid', {item: items[0]})
-// })
 // base url
 const baseURL = "https://gathering.tweakers.net/rss/"
 // directus url
@@ -120,10 +85,8 @@ app.get("/", async function (request, response) {
   }
 
   // url fetch 
-  const tweakersResponse = await fetch('https://fdnd-agency.directus.app/items/tweakers_users?' + new URLSearchParams(params))
   const tweakersResponseJSON = await tweakersResponse.json()
 
-  response.render("index.liquid", {users: tweakersResponseJSON.data});
     const newData = []
 
     tweakersResponseJSON.data.forEach(function (user) {
@@ -186,13 +149,7 @@ app.get("/", async function (request, response) {
   });
 });
 
-// app.get("/categorie/:id", async function (request, response) {
-//   const rssResponse = await fetch('https://gathering.tweakers.net/rss/list_topics/${request.params.id}')
-//   const ResponseXml = await rssResponse.text()
 
-//   const { format, feed } = parseFeed(responseXML)
-//   response.render("categorie.liquid", { items: feed.items })
-// })
 
 app.set("port", process.env.PORT || 8001);
 
