@@ -1,5 +1,6 @@
- * {
+* {
      margin: 0px;
+     padding: 0px;
      box-sizing: border-box;
      font-family: IBM Plex Sans;
  }
@@ -17,9 +18,16 @@
  header {
      /* display: flex;
     justify-content: space-between; */
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    margin-bottom: 1rem;
 
      h1 {
          font-family: IBM Plex Sans;
+     }
+     img{
+        width: 50px;
      }
  }
 
@@ -29,29 +37,18 @@
      /* 
         veel handiger om frs te gebruiken voor responsiveness!
      grid-template-columns: repeat(2, 350px); */
-     grid-template-columns: 1fr 1fr;
+     grid-template-columns: 1fr;
      /*  Deze hebben we eigenlijk niet nodig, grid maakt zelf rows aan.
     grid-template-rows: repeat(2, 1fr); */
-     justify-content: center;
-     gap: 10px;
- }
+    justify-content: center;
+    gap: 10px;
 
- /* Small card */
- .small-cards {
-     display: grid;
-     align-items: center;
-     /* we gebruiken auto, zodat de eerste kolom de breedte krijgt van z'n content */
-     grid-template-columns: auto 1fr;
-     grid-template-rows: repeat(3, auto);
-     /* auto auto auto; */
-     column-gap: 0.5rem;
+    @media (min-width: 490px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
-     background-color: var(--white);
-
-     border-radius: var(--border-radius);
-     padding: 10px;
-
-     /* we hebben geen height nodig, we gebruiken de content om de hoogte te bepalen
     height: 130px; 
     Als je dan height wil geven, gebruik dan min height zodat als de content groter moet worden dat het kan.
     */
