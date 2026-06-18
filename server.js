@@ -106,6 +106,10 @@ app.set("views", "./views");
 
 //   response.render('index.liquid', {item: items[0]})
 // })
+// base url
+const baseURL = "https://gathering.tweakers.net/rss/"
+// directus url
+const directusURL = 'https://fdnd-agency.directus.app/items/tweakers_users?'
 
 app.get("/", async function (request, response) {
 
@@ -120,6 +124,66 @@ app.get("/", async function (request, response) {
   const tweakersResponseJSON = await tweakersResponse.json()
 
   response.render("index.liquid", {users: tweakersResponseJSON.data});
+    const newData = []
+
+    tweakersResponseJSON.data.forEach(function (user) {
+    user.number_of_posts = Intl.NumberFormat("nl-NL").format(user.number_of_posts)
+    newData.push(user)
+  })
+
+  const gebruikersResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/tweakers_users?sort=-number_of_posts&limit=5",
+  );
+  const gebruikersData = await gebruikersResponse.json();
+  const categorieen = [7, 4, 127, 100, 32, 9, 41];
+
+  const teksten = await Promise.all(
+    categorieen.map(function (categorie) {
+      return fetch(
+        "https://gathering.tweakers.net/rss/list_topics/" + categorie,
+      ).then(function (res) {
+        return res.text();
+      });
+    }),
+  );
+
+  const items = [];
+  const categorieStats = [];
+
+  for (const xml of teksten) {
+    const { feed } = parseFeed(xml);
+    // console.log(feed.items[0]);
+
+    let totaalReacties = 0;
+    for (const item of feed.items) {
+      const replies = Number(
+        item.description.substring(9, item.description.indexOf("\n")),
+      );
+      items.push({ title: item.title, link: item.link, replies: replies });
+      totaalReacties += replies;
+    }
+
+    categorieStats.push({
+      naam: feed.title, // naam van de categorie
+      aantalTopics: feed.items.length,
+      totaalReacties: totaalReacties,
+    });
+  }
+
+  // Sorteer aflopend op aantal reacties en pak de top 5 topics
+  items.sort(function (a, b) {
+    return b.replies - a.replies;
+  });
+
+  // Sorteer categorieën aflopend op totaal aantal reacties
+  categorieStats.sort(function (a, b) {
+    return b.totaalReacties - a.totaalReacties;
+  });
+
+  response.render("index.liquid", {
+    items: items.slice(0, 5),
+    users: tweakersResponseJSON.data
+  });
 });
 
 // app.get("/categorie/:id", async function (request, response) {
