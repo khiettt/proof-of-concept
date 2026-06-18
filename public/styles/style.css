@@ -49,13 +49,33 @@
     }
 }
 
+/* Small card */
+.small-cards {
+    display: grid;
+    align-items: center;
+    /* we gebruiken auto, zodat de eerste kolom de breedte krijgt van z'n content */
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    /* auto auto auto; */
+    column-gap: 0.5rem;
+    
+    background-color: var(--white);
+    
+    border-radius: var(--border-radius);
+    padding: 10px;
+    transition: 0.5s;
+    
+    /* we hebben geen height nodig, we gebruiken de content om de hoogte te bepalen
     height: 130px; 
     Als je dan height wil geven, gebruik dan min height zodat als de content groter moet worden dat het kan.
     */
-
-
-
-     h2 {
+    
+    &:hover{
+        transform: translate(3px, 3px);
+    }
+    
+    
+    h2 {
          font-family: IBM Plex Sans;
          font-weight: 600;
          text-align: center;
