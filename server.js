@@ -1,5 +1,6 @@
 // Importeer het npm package Espress
 import express from "express";
+import express, { text } from "express";
 
 // import het npm package feed
 import { parseFeed } from 'feedsmith'
@@ -14,6 +15,7 @@ const app = express();
 
 // Maak werken met de data uit Formulier iets prettiger
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Gebruik de map 'public' voor statische bestanden 
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
@@ -188,6 +190,21 @@ app.get('/active-users', async function (request, response) {
     users: paramsUserResponseJSON.data
   })
 })
+
+// post 
+app.post("/:id", async function (request, response) {
+  const postResponse = await fetch("https://fdnd-agency.directus.app/items/tweakers_moderator_tags", {
+    method: "POST", 
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    },
+    body: JSON.stringify({
+      topic_id: request.params.id,
+      text: request.body.text
+    })
+  })
+})
+
 
 app.set("port", process.env.PORT || 8001);
 

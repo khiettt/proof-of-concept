@@ -40,14 +40,16 @@
     </section>
 
     <div class="form-submit">
-        <form id="formcomment" action="/active-users" method="POST">
-            <label for="name">Schrijf een comment</label>
-            <input type="text" name="comment" id="comment">
+
+        <form action="/{{ item.id }}" method="POST" id="formcomment" >
+            <label for="text">Schrijf een comment</label>
+            <input type="text" name="text" id="text" placeholder="">
 
             <label for="email"></label>
             <input type="email" placeholder="Enter je email" name="email" id="email" required>
 
              <input type="submit" value="Verstuur">
-        </div>
+        </form>
+    </div>
 </main>
 {% include 'partials/foot.liquid' %}
