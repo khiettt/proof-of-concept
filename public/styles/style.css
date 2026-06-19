@@ -142,10 +142,16 @@
         row-gap: 1.5rem;
     }
 }
-
  meter {
-     margin-bottom: 1rem;
- }
+    margin-bottom: 1rem;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+ /* pseudo element van firefox */
+meter::-moz-meter-bar {
+  background: var(--color-brand);
+}
  meter::-webkit-meter-bar{
     background-color: var(--grey-95);
     height: 15px;
@@ -155,30 +161,32 @@
      width: 15rem;
  }
 
+ /* Chrome, Edge, Ecosia, Opera */
  meter::-webkit-meter-optimum-value {
     padding: 10px;
     background-color: var(--color-brand);
     animation-name: meter;
     animation-duration: 1s;
  }
-@keyframes meter{
-    from{
-        inline-size: 0%;
+
+ @keyframes meter{
+     from{
+         inline-size: 0%;
+        }
     }
-}
-
-.grid-container {
-    grid-column: 1 /-1;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    gap: inherit;
-}
-
-/* Laatste paar kollomen */
-.smallest-colmn {
-    /* width: 350px;
+    
+    .grid-container {
+        grid-column: 1 /-1;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: inherit;
+    }
+    
+    /* Laatste paar kollomen */
+    .smallest-colmn {
+        /* width: 350px;
     height: 100px; */
     display: grid;
     grid-template-columns: 50px 1fr;
@@ -347,18 +355,14 @@
 }
 
 /* form */
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
+/* form{
+} */
+
 input{
     padding: 12px;
     width: 100%;
 }
 
-.form-submit{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* .form-submit{
+
+} */

@@ -1,5 +1,4 @@
 // Importeer het npm package Espress
-import express from "express";
 import express, { text } from "express";
 
 // import het npm package feed
