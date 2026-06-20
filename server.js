@@ -66,7 +66,7 @@ app.engine("liquid", engine.express());
 //   }
 // }
 
-scrapeAndUpdateTweakers()
+// scrapeAndUpdateTweakers()
 
 // Stel de map met Liquid templates in
 // Deze bestanden kunnen niet rechtstreeks laden
