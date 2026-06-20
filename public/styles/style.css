@@ -3,40 +3,39 @@
      padding: 0px;
      box-sizing: border-box;
      font-family: IBM Plex Sans;
- }
+}
 
- body {
-     background-color: #F3F3F3;
- }
+body {
+    background-color: #F3F3F3;
+}
 
- @font-face {
-     font-family: IBM Plex Sans;
-     src: url('/font/IBM_Plex_Sans,Parkinsans.zip') format('truetype');
- }
+@font-face {
+    font-family: IBM Plex Sans;
+    src: url('/font/IBM_Plex_Sans,Parkinsans.zip') format('truetype');
+}
 
- /* header */
- header {
+/* header */
+header {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
     margin-bottom: 1rem;
 
-     h1 {
-         font-family: IBM Plex Sans;
-     }
-     img{
+    h1 {
+        font-family: IBM Plex Sans;
+    }
+    img{
         width: 50px;
-     }
- }
+    }
+}
 
- /* main */
- main {
-     display: grid;
-     /* 
-        veel handiger om frs te gebruiken voor responsiveness!
-     grid-template-columns: repeat(2, 350px); */
-     grid-template-columns: 1fr;
-     /*  Deze hebben we eigenlijk niet nodig, grid maakt zelf rows aan.
+/* main */
+main {
+    display: grid;
+    /* veel handiger om fr's te gebruiken voor responsiveness!
+    grid-template-columns: repeat(2, 350px); */
+    grid-template-columns: 1fr;
+    /*  Deze hebben we eigenlijk niet nodig, grid maakt zelf rows aan.
     grid-template-rows: repeat(2, 1fr); */
     justify-content: center;
     gap: 10px;
@@ -74,64 +73,64 @@
     
     
     h2 {
-         font-family: IBM Plex Sans;
-         font-weight: 600;
-         text-align: center;
-     }
-
-     .small-card-img {
-         /* width: 3.125rem; */
-         height: 100%;
-         aspect-ratio: 1;
-         grid-row: 1 / -1;
-         /* dit betekent dat het alle mogelijke rijen gaat vullen met dit element */
-         padding: 15px;
-         border-radius: 10px;
-
-     }
- }
-
- p {
-     font-family: IBM Plex Sans;
-     font-weight: 300;
-     text-align: center;
+        font-family: IBM Plex Sans;
+        font-weight: 600;
+        text-align: center;
+    }
 
      span {
          color: var(--grey-75);
      }
  }
+    .small-card-img {
+        /* width: 3.125rem; */
+        height: 100%;
+        aspect-ratio: 1;
+        grid-row: 1 / -1;
+        /* dit betekent dat het alle mogelijke rijen gaat vullen met dit element */
+        padding: 15px;
+        border-radius: 10px;
+
+    }
+}
+
+p {
+    font-family: IBM Plex Sans;
+    font-weight: 300;
+    text-align: center;
 
 
 
- .img-total-topics {
-     background-color: var(--color-secondary-light);
- }
 
- .img-active-topics {
-     background-color: var(--color-success);
- }
+.img-total-topics {
+    background-color: var(--color-secondary-light);
+}
 
- .img-most-active-user {
-     background-color: var(--color-secondary-orange);
- }
+.img-active-topics {
+    background-color: var(--color-success);
+}
 
- .img-account-circle {
-     background-color: var(--color-info-light);
- }
+.img-most-active-user {
+    background-color: var(--color-secondary-orange);
+}
 
- /* Top actieve topics kaartje */
- .top-topics-card {
-     grid-column: 1 / -1;
-     background-color: var(--white);
-     padding: 2rem;
-     border-radius: var(--border-radius);
- }
+.img-account-circle {
+    background-color: var(--color-info-light);
+}
 
- .top-topics-card h2 {
-     margin-bottom: 2rem;
- }
+/* Top actieve topics kaartje */
+.top-topics-card {
+    grid-column: 1 / -1;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
 
- .topic-list {
+.top-topics-card h2 {
+    margin-bottom: 2rem;
+}
+
+.topic-list {
     display: flex;
     flex-direction: column;
 
@@ -142,80 +141,78 @@
         row-gap: 1.5rem;
     }
 }
- meter {
+meter {
     margin-bottom: 1rem;
     appearance: none;
     -moz-appearance: none;
 }
 
- /* pseudo element van firefox */
+/* pseudo element van firefox */
 meter::-moz-meter-bar {
   background: var(--color-brand);
 }
- meter::-webkit-meter-bar{
+meter::-webkit-meter-bar{
     background-color: var(--grey-95);
     height: 15px;
- }
+}
 
- meter::-webkit-meter-inner-element {
-     width: 15rem;
- }
+meter::-webkit-meter-inner-element {
+    width: 15rem;
+}
 
- /* Chrome, Edge, Ecosia, Opera */
- meter::-webkit-meter-optimum-value {
+/* Chrome, Edge, Ecosia, Opera */
+meter::-webkit-meter-optimum-value {
     padding: 10px;
     background-color: var(--color-brand);
     animation-name: meter;
     animation-duration: 1s;
- }
+}
 
- @keyframes meter{
-     from{
-         inline-size: 0%;
-        }
+@keyframes meter{
+    from{
+        inline-size: 0%;
     }
+}
     
-    .grid-container {
-        grid-column: 1 /-1;
+.grid-container {
+    grid-column: 1 /-1;
         
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr;
-        gap: inherit;
-    }
-    
-    /* Laatste paar kollomen */
-    .smallest-colmn {
-        /* width: 350px;
-    height: 100px; */
     display: grid;
-    grid-template-columns: 50px 1fr;
-    grid-template-rows: 30px 1fr;
-    align-items: center;
-    background-color: var(--white);
-    column-gap: 1rem;
-    row-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: inherit;
+}
+    
+/* Laatste paar kollomen */
+.smallest-colmn {
+display: grid;
+grid-template-columns: 50px 1fr;
+grid-template-rows: 30px 1fr;
+align-items: center;
+background-color: var(--white);
+column-gap: 1rem;
+row-gap: 0.5rem;
+padding: 10px;
+border-radius: var(--border-radius);
+}
+
+
+.smallest-colmn-h2 {
+    font-size: 18px;
     padding: 10px;
-    border-radius: var(--border-radius);
- }
+    text-align: center;
+}
 
+.smallest-colmn-p {
+    grid-column: 2;
+}
 
- .smallest-colmn-h2 {
-     font-size: 18px;
-     padding: 10px;
-     text-align: center;
- }
-
- .smallest-colmn-p {
-     grid-column: 2;
- }
-
- .img-active-topics-small {
-     background-color: var(--color-brand);
-     padding: 8px;
-     border-radius: 10px;
-     grid-row: 1 / -1;
- }
+.img-active-topics-small {
+    background-color: var(--color-brand);
+    padding: 8px;
+    border-radius: 10px;
+    grid-row: 1 / -1;
+}
 
 .top-user-card {
     grid-column: 2;
@@ -257,7 +254,7 @@ meter::-moz-meter-bar {
     color: var(--grey-75);
 }
 
- /* Meest gebruikte categorie */
+/* Meest gebruikte categorie */
 .most-used-category {
     display: grid;
     align-items: center;
@@ -277,7 +274,7 @@ meter::-moz-meter-bar {
     }
 }
 
- /* laatste kaartje */
+/* laatste kaartje */
 
 .last-topic-card {
     grid-column: span 2;
