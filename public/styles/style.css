@@ -78,10 +78,6 @@ main {
         text-align: center;
     }
 
-     span {
-         color: var(--grey-75);
-     }
- }
     .small-card-img {
         /* width: 3.125rem; */
         height: 100%;
@@ -99,6 +95,10 @@ p {
     font-weight: 300;
     text-align: center;
 
+    span {
+        color: var(--grey-5);
+    }
+}
 
 
 
@@ -251,7 +251,7 @@ border-radius: var(--border-radius);
 
 .user-comment,
 .amount-topics {
-    color: var(--grey-75);
+    color: var(--grey-5);
 }
 
 /* Meest gebruikte categorie */
