@@ -310,10 +310,27 @@ border-radius: var(--border-radius);
 }
 
 /* user pagina */
-.users-page{
+.back-btn{
     margin: 10px;
+    border: 1px solid var(--color-brand);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--grey-5);
+    text-decoration: none;
+    transition-duration: 0.4s;
+
+    &:hover{
+    background-color: var(--color-brand); /* Green */
+    color: white;
+    }
+}
+.users-page{
     display: grid;
     grid-template-columns: 1fr;
+
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
     @media (min-width: 575px){
         display: grid;
