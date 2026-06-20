@@ -48,7 +48,7 @@
     <div class="topic-list">
       {% comment %} topic: AM5: Ervaring en Discussie {% endcomment %}
          {% for item in items %}
-        <label id="topic-245">{{ item.title }}</label>
+        <label class="topic-245">{{ item.title }}</label>
         <meter min="0" max="30000" value="{{ item.replies }}">{{ item.replies }}</meter>
         <p>{{ item.replies }}</p>
         {% endfor %}
