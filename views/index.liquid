@@ -31,7 +31,7 @@
     <h2>450</h2>
     <p>Meest actieve gebruikers</p>
     <p>15.2%<span> vs gisteren</span></p>
-    <a href="/active-users"><img src="assets/Drop Down Menu Indicator.svg"></a>
+    <a href="/active-users"><img src="assets/Drop-Down-Menu-Indicator.svg" aria-label="Naar active-users pagina"></a>
   </section>
 
   <section class="small-cards">
@@ -48,7 +48,7 @@
     <div class="topic-list">
       {% comment %} topic: AM5: Ervaring en Discussie {% endcomment %}
          {% for item in items %}
-        <label for="topic-245">{{ item.title }}</label>
+        <label id="topic-245">{{ item.title }}</label>
         <meter min="0" max="30000" value="{{ item.replies }}">{{ item.replies }}</meter>
         <p>{{ item.replies }}</p>
         {% endfor %}
@@ -86,8 +86,8 @@
     </section>
 
     <section class="last-topic-card">
+      <h2 class="h2-last-topic">Laatste topic</h2>
       <ul class="last-topic-list">
-        <h2 class="h2-last-topic">Laatste topic</h2>
         <li class="last-topic-item">
           <span class="topic">Wat zie jij aan je bureau? Deel 32</span>
           <div class="last-topic-user">Door Jeroen207</div>
