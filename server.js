@@ -191,18 +191,18 @@ app.get('/active-users', async function (request, response) {
 })
 
 // post 
-app.post("/:id", async function (request, response) {
-  const postResponse = await fetch("https://fdnd-agency.directus.app/items/tweakers_moderator_tags", {
-    method: "POST", 
-    headers: {
-      'Content-Type': 'application/json;charset=UTF-8'
-    },
-    body: JSON.stringify({
-      topic_id: request.params.id,
-      text: request.body.text
-    })
-  })
-})
+// app.post("/:id", async function (request, response) {
+//   const postResponse = await fetch("https://fdnd-agency.directus.app/items/tweakers_moderator_tags", {
+//     method: "POST", 
+//     headers: {
+//       'Content-Type': 'application/json;charset=UTF-8'
+//     },
+//     body: JSON.stringify({
+//       topic_id: request.params.id,
+//       text: request.body.text
+//     })
+//   })
+// })
 
 
 app.set("port", process.env.PORT || 8001);
