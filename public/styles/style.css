@@ -297,7 +297,7 @@ border-radius: var(--border-radius);
 
     .last-topic-user,
     .last-topic-time {
-        color: var(--grey-75);
+        color: var(--grey-5);
     }
 }
 
